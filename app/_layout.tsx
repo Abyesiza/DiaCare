@@ -5,6 +5,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import { MenuProvider } from 'react-native-popup-menu';
 
 import { useColorScheme } from '@/components/useColorScheme';
 
@@ -50,10 +51,22 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <MenuProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="appointScreen" options={{ presentation: 'modal', title:"Appointment Reminders"}} />
+        <Stack.Screen name="medicate" options={{ presentation: 'modal', title:"Medication Reminders"}} />
+        <Stack.Screen name="glucoseScreen" options={{ presentation: 'modal' , title:"Glucose level Tracker"}} />
+        <Stack.Screen name="bpScreen" options={{ presentation: 'modal', title:"Blood pressure Tracker" }} />
+        <Stack.Screen name="lsScreen" options={{ presentation: 'modal' , title:"Recomendations"}} />
+        <Stack.Screen name="signin" options={{ presentation: 'modal' , title:"SignIn"}} />
+        <Stack.Screen name="signup" options={{ presentation: 'modal' , title:"SignUp"}} />
+        <Stack.Screen name='form' options={{presentation:'modal', title:'form'}} />
+        <Stack.Screen name='chatRoom' options={{presentation:'modal', title:'inbox'}} />
+        <Stack.Screen name='foodScreen' options={{presentation:'modal', title:'Health Foods'}} />
       </Stack>
+      </MenuProvider>
     </ThemeProvider>
   );
 }
