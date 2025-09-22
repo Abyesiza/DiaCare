@@ -11,7 +11,7 @@
     "splash": {
       "image": "./assets/images/icond-01.png",
       "resizeMode": "contain",
-      "backgroundColor": "beige"
+      "backgroundColor": "#F5F5DC"
     },
     "ios": {
       "supportsTablet": true
@@ -29,7 +29,8 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
